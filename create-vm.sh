@@ -24,5 +24,5 @@ echo "Destination Name: $DEST_NAME"
 # exit
 
 # Continue with the rest of our logic
-echo qm clone ${TEMPLATE_ID} 190 --name ${DEST_NAME}
-echo qm set ${TEMPLATE_ID} --ide2 $DATA_STORE:cloudinit --boot c --bootdisk scsi0 --serial0 socket --vga serial0
+echo qm clone "${TEMPLATE_ID}" 190 --name "${DEST_NAME}"
+echo qm set "${TEMPLATE_ID}" --ide2 "$DATA_STORE":cloudinit --boot c --bootdisk scsi0 --serial0 socket --vga serial0
