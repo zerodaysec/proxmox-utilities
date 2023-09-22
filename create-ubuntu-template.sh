@@ -31,7 +31,7 @@ done
 if [ "$VALID" = true ]; then
     echo "Creating template for release: $RELEASE"
 else
-    echo "Error: Invalid release. Must be one of: ${UBUNTU_RELEASES[@]}"
+    echo "Error: Invalid release. Must be one of: ${UBUNTU_RELEASES[*]}"
     exit 1
 fi
 
