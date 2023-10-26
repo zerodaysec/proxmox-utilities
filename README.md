@@ -1,6 +1,6 @@
 # proxmox-utilities
 
-![example workflow](https://github.com/zerodaysec/proxmox-utilities/actions/workflows/ci.yml/badge.svg)
+![CICD Action](https://github.com/zerodaysec/proxmox-utilities/actions/workflows/cicd.yml/badge.svg)
 
 ***WARNING: These are untested and provide 0 warranty or guarantee.***
 
