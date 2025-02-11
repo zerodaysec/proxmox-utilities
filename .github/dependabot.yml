@@ -9,7 +9,7 @@ updates:
       interval: "weekly"
     # Add assignees
     assignees:
-      - "mrc0der"
+      - "jon-the-dev"
 
   - package-ecosystem: "npm"
     # Files stored in `app` directory
@@ -18,7 +18,7 @@ updates:
       interval: "weekly"
     # Add assignees
     assignees:
-      - "mrc0der"
+      - "jon-the-dev"
 
   - package-ecosystem: "github-actions"
     # Workflow files stored in the
@@ -28,4 +28,4 @@ updates:
       interval: "weekly"
     # Add assignees
     assignees:
-      - "mrc0der"
+      - "jon-the-dev"
