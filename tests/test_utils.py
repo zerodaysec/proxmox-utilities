@@ -7,8 +7,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from proxmox_utilities.exceptions import NetworkError, ProxmoxCommandError
-from proxmox_utilities.utils import (
+from proxbox.exceptions import NetworkError, ProxmoxCommandError
+from proxbox.utils import (
     download_file,
     run_command,
     sanitize_vm_name,

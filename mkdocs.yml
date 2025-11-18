@@ -1,5 +1,5 @@
-site_name: Proxmox Utilities
-site_description: Secure, production-ready utilities for Proxmox VM automation
+site_name: ProxBox
+site_description: ProxBox - Your Proxmox toolbox for secure VM automation
 site_author: ZeroDay Security
 site_url: https://zerodaysec.github.io/proxmox-utilities
 

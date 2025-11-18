@@ -3,9 +3,9 @@ requires = ["hatchling>=1.21.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "proxmox-utilities"
+name = "proxbox"
 version = "0.1.0"
-description = "Secure, production-ready utilities for Proxmox VM automation"
+description = "ProxBox - Your Proxmox toolbox for secure VM automation"
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 authors = [
@@ -83,12 +83,13 @@ Issues = "https://github.com/zerodaysec/proxmox-utilities/issues"
 Changelog = "https://github.com/zerodaysec/proxmox-utilities/blob/main/CHANGELOG.md"
 
 [project.scripts]
-proxmox-create-template = "proxmox_utilities.cli:create_template"
-proxmox-create-vm = "proxmox_utilities.cli:create_vm"
-proxmox = "proxmox_utilities.cli:main"
+proxmox-create-template = "proxbox.cli:create_template"
+proxmox-create-vm = "proxbox.cli:create_vm"
+proxmox = "proxbox.cli:main"
+proxbox = "proxbox.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/proxmox_utilities"]
+packages = ["src/proxbox"]
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -194,7 +195,7 @@ python_functions = ["test_*"]
 addopts = [
     "--strict-markers",
     "--strict-config",
-    "--cov=src/proxmox_utilities",
+    "--cov=src/proxbox",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",

@@ -1,5 +1,5 @@
 """
-Pytest configuration and fixtures for proxmox-utilities tests.
+Pytest configuration and fixtures for ProxBox tests.
 """
 
 from pathlib import Path
@@ -7,7 +7,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from proxmox_utilities.config import ProxmoxConfig
+from proxbox.config import ProxmoxConfig
 
 
 @pytest.fixture

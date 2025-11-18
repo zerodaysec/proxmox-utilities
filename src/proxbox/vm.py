@@ -8,9 +8,9 @@ from typing import Optional
 
 from rich.console import Console
 
-from proxmox_utilities.config import ProxmoxConfig
-from proxmox_utilities.exceptions import ValidationError, VMCreationError
-from proxmox_utilities.utils import (
+from proxbox.config import ProxmoxConfig
+from proxbox.exceptions import ValidationError, VMCreationError
+from proxbox.utils import (
     format_error,
     format_info,
     format_success,

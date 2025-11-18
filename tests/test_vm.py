@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from proxmox_utilities.config import ProxmoxConfig
-from proxmox_utilities.exceptions import ValidationError, VMCreationError
-from proxmox_utilities.vm import VMCreator
+from proxbox.config import ProxmoxConfig
+from proxbox.exceptions import ValidationError, VMCreationError
+from proxbox.vm import VMCreator
 
 
 class TestVMCreator:

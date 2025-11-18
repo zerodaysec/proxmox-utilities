@@ -1,5 +1,5 @@
 """
-Proxmox Utilities - Secure, production-ready utilities for Proxmox VM automation.
+ProxBox - Your Proxmox toolbox for secure VM automation.
 
 This package provides Python-based tools for automating common Proxmox VE tasks:
 - Creating Ubuntu cloud-init templates
@@ -15,7 +15,7 @@ __author__ = "ZeroDay Security"
 __email__ = "jon@zer0day.net"
 __license__ = "GPL-3.0-or-later"
 
-from proxmox_utilities.exceptions import (
+from proxbox.exceptions import (
     ProxmoxUtilityError,
     TemplateCreationError,
     VMCreationError,
@@ -23,8 +23,8 @@ from proxmox_utilities.exceptions import (
     NetworkError,
     ProxmoxCommandError,
 )
-from proxmox_utilities.template import TemplateCreator, UbuntuRelease
-from proxmox_utilities.vm import VMCreator
+from proxbox.template import TemplateCreator, UbuntuRelease
+from proxbox.vm import VMCreator
 
 __all__ = [
     # Version info

@@ -1,14 +1,14 @@
-# Proxmox Utilities
+# ProxBox
 
 ![CI/CD](https://github.com/zerodaysec/proxmox-utilities/actions/workflows/python-ci.yml/badge.svg)
-[![PyPI version](https://badge.fury.io/py/proxmox-utilities.svg)](https://pypi.org/project/proxmox-utilities/)
-[![Python versions](https://img.shields.io/pypi/pyversions/proxmox-utilities.svg)](https://pypi.org/project/proxmox-utilities/)
+[![PyPI version](https://badge.fury.io/py/proxbox.svg)](https://pypi.org/project/proxbox/)
+[![Python versions](https://img.shields.io/pypi/pyversions/proxbox.svg)](https://pypi.org/project/proxbox/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-**Secure, production-ready utilities for Proxmox VM automation**
+**ProxBox - Your Proxmox toolbox for secure VM automation**
 
-Proxmox Utilities is a modern Python package and CLI tool for automating Proxmox VE operations with a focus on security, reliability, and operational excellence.
+ProxBox is a modern Python package and CLI tool for automating Proxmox VE operations with a focus on security, reliability, and operational excellence.
 
 ## ✨ Features
 
@@ -24,7 +24,7 @@ Proxmox Utilities is a modern Python package and CLI tool for automating Proxmox
 ## 📦 Installation
 
 ```bash
-pip install proxmox-utilities
+pip install proxbox
 ```
 
 ## 🚀 Quick Start
@@ -33,10 +33,10 @@ pip install proxmox-utilities
 
 ```bash
 # Create Ubuntu 22.04 LTS template
-proxmox create-template jammy 9001 --ssh-key ~/.ssh/id_rsa.pub
+proxbox create-template jammy 9001 --ssh-key ~/.ssh/id_rsa.pub
 
 # Create template with custom settings
-proxmox create-template noble 9002 \
+proxbox create-template noble 9002 \
     --name my-ubuntu-template \
     --memory 4096 \
     --disk-increase 50
@@ -46,16 +46,16 @@ proxmox create-template noble 9002 \
 
 ```bash
 # Clone a VM from template and start it
-proxmox create-vm 9001 190 my-ubuntu-vm --start
+proxbox create-vm 9001 190 my-ubuntu-vm --start
 
 # Check VM status
-proxmox status 190
+proxbox status 190
 
 # Stop a VM
-proxmox stop 190
+proxbox stop 190
 
 # Delete a VM (with confirmation)
-proxmox delete 190
+proxbox delete 190
 ```
 
 ## 📖 Documentation
@@ -131,7 +131,7 @@ pre-commit install
 pytest
 
 # Run with coverage
-pytest --cov=src/proxmox_utilities --cov-report=html
+pytest --cov=src/proxbox --cov-report=html
 
 # Run specific tests
 pytest tests/test_template.py -v

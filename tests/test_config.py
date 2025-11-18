@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from proxmox_utilities.config import ProxmoxConfig, load_config
+from proxbox.config import ProxmoxConfig, load_config
 
 
 class TestProxmoxConfig:
