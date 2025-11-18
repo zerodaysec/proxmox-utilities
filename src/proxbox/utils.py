@@ -27,7 +27,7 @@ from tenacity import (
     wait_exponential,
 )
 
-from proxmox_utilities.exceptions import NetworkError, ProxmoxCommandError
+from proxbox.exceptions import NetworkError, ProxmoxCommandError
 
 console = Console()
 

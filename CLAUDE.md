@@ -2,15 +2,15 @@
 
 ## Project Overview
 
-**Project Name:** proxmox-utilities
+**Project Name:** proxbox
 **Version:** 0.1.0
 **License:** GPLv3+
-**Repository:** https://github.com/zerodaysec/proxmox-utilities
+**Repository:** https://github.com/zerodaysec/proxbox
 **Primary Language:** Python 3.9+
 
 ### Purpose
 
-Proxmox Utilities is a secure, production-ready Python package and CLI tool for automating Proxmox VE operations, specifically:
+ProxBox is your Proxmox toolbox - a secure, production-ready Python package and CLI tool for automating Proxmox VE operations, specifically:
 
 1. **Template Creation** - Automated Ubuntu cloud-init template creation from official cloud images
 2. **VM Management** - Clone, start, stop, delete, and manage Proxmox VMs
@@ -30,8 +30,8 @@ Proxmox Utilities is a secure, production-ready Python package and CLI tool for 
 ### Project Structure
 
 ```
-proxmox-utilities/
-├── src/proxmox_utilities/        # Main package
+proxbox/
+├── src/proxbox/        # Main package
 │   ├── __init__.py              # Package exports
 │   ├── cli.py                   # Click-based CLI commands
 │   ├── config.py                # Pydantic configuration management
@@ -129,8 +129,8 @@ Legacy files (being deprecated):
 
 ```bash
 # Clone repository
-git clone https://github.com/zerodaysec/proxmox-utilities.git
-cd proxmox-utilities
+git clone https://github.com/zerodaysec/proxbox.git
+cd proxbox
 
 # Install in development mode with all dependencies
 pip install -e ".[dev,docs,security]"
@@ -146,7 +146,7 @@ pre-commit install
 pytest
 
 # Run with coverage
-pytest --cov=src/proxmox_utilities --cov-report=html
+pytest --cov=src/proxbox --cov-report=html
 
 # Run specific test file
 pytest tests/test_template.py
@@ -251,12 +251,12 @@ twine upload dist/*
 
 ### Releasing a New Version
 
-1. Update version in `pyproject.toml` and `src/proxmox_utilities/__init__.py`
+1. Update version in `pyproject.toml` and `src/proxbox/__init__.py`
 2. Update CHANGELOG.md with all changes
 3. Run full test suite: `pytest`
 4. Run security scans
 5. Build package: `python -m build`
-6. Test installation: `pip install dist/proxmox_utilities-*.whl`
+6. Test installation: `pip install dist/proxbox-*.whl`
 7. Tag release: `git tag v0.1.0`
 8. Push to GitHub: `git push && git push --tags`
 9. Upload to PyPI: `twine upload dist/*`
@@ -385,8 +385,8 @@ See [CONTRIBUTING.md](development/contributing.md) for detailed contribution gui
 
 - **Maintainer:** ZeroDay Security
 - **Email:** jon@zer0day.net
-- **Repository:** https://github.com/zerodaysec/proxmox-utilities
-- **Issues:** https://github.com/zerodaysec/proxmox-utilities/issues
+- **Repository:** https://github.com/zerodaysec/proxbox
+- **Issues:** https://github.com/zerodaysec/proxbox/issues
 - **Security:** security@zer0day.net (for vulnerabilities)
 
 ## License

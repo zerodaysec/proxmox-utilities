@@ -11,9 +11,9 @@ from typing import Optional
 
 from rich.console import Console
 
-from proxmox_utilities.config import ProxmoxConfig
-from proxmox_utilities.exceptions import TemplateCreationError, ValidationError
-from proxmox_utilities.utils import (
+from proxbox.config import ProxmoxConfig
+from proxbox.exceptions import TemplateCreationError, ValidationError
+from proxbox.utils import (
     download_file,
     format_error,
     format_info,

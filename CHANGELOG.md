@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **BREAKING:** Package renamed from `proxmox-utilities` to `proxbox` for better branding
+- **BREAKING:** Python package module renamed from `proxmox_utilities` to `proxbox`
+- CLI now available as both `proxbox` and `proxmox` commands (for backward compatibility)
+- All documentation and examples updated to use new `proxbox` name
+
 ### Added
 - Complete PyPI package restructure with modern Python packaging (PEP 517/518)
-- Python package structure with src layout (`src/proxmox_utilities/`)
+- Python package structure with src layout (`src/proxbox/`)
 - Comprehensive CLI tool with Click framework
 - Rich terminal UI with progress bars and colored output
 - Configuration management with Pydantic and environment variable support
@@ -103,11 +109,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **New:**
 ```bash
 # Install from PyPI
-pip install proxmox-utilities
+pip install proxbox
 
 # Use CLI
-proxmox create-template jammy 9001
-proxmox create-vm 9001 190 my-vm
+proxbox create-template jammy 9001
+proxbox create-vm 9001 190 my-vm
 ```
 
 #### Configuration
@@ -140,10 +146,10 @@ echo 'PROXMOX_DATA_STORE="local-lvm"' > .env
 **New:**
 ```bash
 # Basic usage
-proxmox create-template jammy 9001
+proxbox create-template jammy 9001
 
 # With options
-proxmox create-template jammy 9001 \\
+proxbox create-template jammy 9001 \\
     --name my-template \\
     --memory 4096 \\
     --disk-increase 50 \\
@@ -161,15 +167,15 @@ proxmox create-template jammy 9001 \\
 **New:**
 ```bash
 # Create VM
-proxmox create-vm 9001 190 my-vm
+proxbox create-vm 9001 190 my-vm
 
 # Create and start
-proxmox create-vm 9001 191 web-server --start
+proxbox create-vm 9001 191 web-server --start
 
 # Additional management
-proxmox status 190
-proxmox stop 190
-proxmox delete 190 --yes
+proxbox status 190
+proxbox stop 190
+proxbox delete 190 --yes
 ```
 
 #### Error Handling
@@ -191,7 +197,7 @@ proxmox delete 190 --yes
 
 1. **Install Python package:**
    ```bash
-   pip install proxmox-utilities
+   pip install proxbox
    ```
 
 2. **Set environment variables:**
@@ -202,14 +208,14 @@ proxmox delete 190 --yes
    ```
 
 3. **Update scripts:**
-   - Replace `./create-ubuntu-template.sh` with `proxmox create-template`
-   - Replace `./create-vm.sh` with `proxmox create-vm`
+   - Replace `./create-ubuntu-template.sh` with `proxbox create-template`
+   - Replace `./create-vm.sh` with `proxbox create-vm`
    - Add explicit VM IDs (no longer hardcoded)
 
 4. **Test:**
    ```bash
-   proxmox --version
-   proxmox --help
+   proxbox --version
+   proxbox --help
    ```
 
 ## Contributing

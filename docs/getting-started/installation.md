@@ -14,7 +14,7 @@
 Install the latest stable release from PyPI:
 
 ```bash
-pip install proxmox-utilities
+pip install proxbox
 ```
 
 ### From Source
@@ -22,8 +22,8 @@ pip install proxmox-utilities
 Install from the GitHub repository:
 
 ```bash
-git clone https://github.com/zerodaysec/proxmox-utilities.git
-cd proxmox-utilities
+git clone https://github.com/zerodaysec/proxbox.git
+cd proxbox
 pip install -e .
 ```
 
@@ -32,7 +32,7 @@ pip install -e .
 For development and testing:
 
 ```bash
-pip install proxmox-utilities[dev]
+pip install proxbox[dev]
 ```
 
 ### With Documentation Tools
@@ -40,7 +40,7 @@ pip install proxmox-utilities[dev]
 To build documentation locally:
 
 ```bash
-pip install proxmox-utilities[docs]
+pip install proxbox[docs]
 ```
 
 ### With Security Tools
@@ -48,13 +48,13 @@ pip install proxmox-utilities[docs]
 To include security scanning tools:
 
 ```bash
-pip install proxmox-utilities[security]
+pip install proxbox[security]
 ```
 
 ### All Optional Dependencies
 
 ```bash
-pip install proxmox-utilities[dev,docs,security]
+pip install proxbox[dev,docs,security]
 ```
 
 ## Verification
@@ -62,13 +62,13 @@ pip install proxmox-utilities[dev,docs,security]
 Verify the installation:
 
 ```bash
-proxmox --version
+proxbox --version
 ```
 
 You should see output like:
 
 ```
-proxmox-utilities, version 0.1.0
+proxbox, version 0.1.0
 ```
 
 ## Shell Completion
@@ -123,7 +123,7 @@ If you get permission errors, ensure you're running on the Proxmox host with roo
 
 ```bash
 sudo -i
-proxmox create-template jammy 9001
+proxbox create-template jammy 9001
 ```
 
 ### Command Not Found

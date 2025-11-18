@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from proxmox_utilities.config import ProxmoxConfig
-from proxmox_utilities.exceptions import TemplateCreationError
-from proxmox_utilities.template import TemplateCreator, UbuntuRelease
+from proxbox.config import ProxmoxConfig
+from proxbox.exceptions import TemplateCreationError
+from proxbox.template import TemplateCreator, UbuntuRelease
 
 
 class TestUbuntuRelease:

@@ -1,15 +1,15 @@
-# Proxmox Utilities
+# ProxBox
 
 **Secure, production-ready utilities for Proxmox VM automation**
 
-[![CI/CD Action](https://github.com/zerodaysec/proxmox-utilities/actions/workflows/cicd.yml/badge.svg)](https://github.com/zerodaysec/proxmox-utilities/actions)
-[![PyPI version](https://badge.fury.io/py/proxmox-utilities.svg)](https://pypi.org/project/proxmox-utilities/)
-[![Python versions](https://img.shields.io/pypi/pyversions/proxmox-utilities.svg)](https://pypi.org/project/proxmox-utilities/)
+[![CI/CD Action](https://github.com/zerodaysec/proxbox/actions/workflows/cicd.yml/badge.svg)](https://github.com/zerodaysec/proxbox/actions)
+[![PyPI version](https://badge.fury.io/py/proxbox.svg)](https://pypi.org/project/proxbox/)
+[![Python versions](https://img.shields.io/pypi/pyversions/proxbox.svg)](https://pypi.org/project/proxbox/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Overview
 
-Proxmox Utilities is a Python package and CLI tool for automating common Proxmox VE tasks with a focus on security, reliability, and operational excellence.
+ProxBox is a Python package and CLI tool for automating common Proxmox VE tasks with a focus on security, reliability, and operational excellence.
 
 ### Features
 
@@ -27,14 +27,14 @@ Proxmox Utilities is a Python package and CLI tool for automating common Proxmox
 ### Installation
 
 ```bash
-pip install proxmox-utilities
+pip install proxbox
 ```
 
 ### Create a Template
 
 ```bash
 # Create an Ubuntu 22.04 LTS template
-proxmox create-template jammy 9001 \\
+proxbox create-template jammy 9001 \\
     --ssh-key ~/.ssh/id_rsa.pub \\
     --memory 4096 \\
     --disk-increase 50
@@ -44,23 +44,23 @@ proxmox create-template jammy 9001 \\
 
 ```bash
 # Clone a VM from the template and start it
-proxmox create-vm 9001 190 my-ubuntu-vm --start
+proxbox create-vm 9001 190 my-ubuntu-vm --start
 ```
 
 ### Manage VMs
 
 ```bash
 # Check VM status
-proxmox status 190
+proxbox status 190
 
 # Stop a VM
-proxmox stop 190
+proxbox stop 190
 
 # Delete a VM
-proxmox delete 190 --yes
+proxbox delete 190 --yes
 ```
 
-## Why Proxmox Utilities?
+## Why ProxBox?
 
 ### Security
 
@@ -86,7 +86,7 @@ proxmox delete 190 --yes
 
 ## Comparison with Shell Scripts
 
-| Feature | Shell Scripts | Proxmox Utilities |
+| Feature | Shell Scripts | ProxBox |
 |---------|---------------|-------------------|
 | Security | ⚠️ Basic | ✅ Comprehensive |
 | Error Handling | ❌ Minimal | ✅ Robust |
@@ -100,8 +100,8 @@ proxmox delete 190 --yes
 ## Architecture
 
 ```
-proxmox-utilities/
-├── src/proxmox_utilities/
+proxbox/
+├── src/proxbox/
 │   ├── __init__.py      # Package initialization
 │   ├── cli.py           # CLI commands
 │   ├── config.py        # Configuration management
@@ -128,6 +128,6 @@ This project is licensed under the GNU General Public License v3.0 or later (GPL
 
 ## Support
 
-- 📖 [Documentation](https://zerodaysec.github.io/proxmox-utilities)
-- 🐛 [Issue Tracker](https://github.com/zerodaysec/proxmox-utilities/issues)
-- 💬 [Discussions](https://github.com/zerodaysec/proxmox-utilities/discussions)
+- 📖 [Documentation](https://zerodaysec.github.io/proxbox)
+- 🐛 [Issue Tracker](https://github.com/zerodaysec/proxbox/issues)
+- 💬 [Discussions](https://github.com/zerodaysec/proxbox/discussions)

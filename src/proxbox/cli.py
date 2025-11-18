@@ -1,5 +1,5 @@
 """
-Command-line interface for Proxmox Utilities.
+Command-line interface for ProxBox.
 
 This module provides CLI commands for template and VM management.
 """
@@ -11,34 +11,34 @@ from typing import Optional
 import click
 from rich.console import Console
 
-from proxmox_utilities import __version__
-from proxmox_utilities.config import ProxmoxConfig
-from proxmox_utilities.exceptions import ProxmoxUtilityError
-from proxmox_utilities.template import TemplateCreator, UbuntuRelease
-from proxmox_utilities.vm import VMCreator
+from proxbox import __version__
+from proxbox.config import ProxmoxConfig
+from proxbox.exceptions import ProxmoxUtilityError
+from proxbox.template import TemplateCreator, UbuntuRelease
+from proxbox.vm import VMCreator
 
 console = Console()
 
 
 @click.group()
-@click.version_option(version=__version__, prog_name="proxmox-utilities")
+@click.version_option(version=__version__, prog_name="proxbox")
 @click.pass_context
 def main(ctx: click.Context) -> None:
     """
-    Proxmox Utilities - Secure VM automation tools.
+    ProxBox - Your Proxmox toolbox for secure VM automation.
 
     Manage Proxmox VE templates and virtual machines with ease.
 
     \b
     Examples:
         # Create an Ubuntu 22.04 template
-        proxmox create-template jammy 9001
+        proxbox create-template jammy 9001
 
         # Clone a VM from a template
-        proxmox create-vm 9001 190 my-ubuntu-vm
+        proxbox create-vm 9001 190 my-ubuntu-vm
 
         # Create and start a VM
-        proxmox create-vm 9001 191 web-server --start
+        proxbox create-vm 9001 191 web-server --start
     """
     ctx.ensure_object(dict)
 

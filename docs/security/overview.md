@@ -1,6 +1,6 @@
 # Security Overview
 
-Proxmox Utilities is designed with security as a top priority. This document outlines the security measures implemented in the project.
+ProxBox is designed with security as a top priority. This document outlines the security measures implemented in the project.
 
 ## Security Features
 
@@ -93,7 +93,7 @@ The project includes automated security scanning:
 
 ```bash
 # Install security tools
-pip install proxmox-utilities[security]
+pip install proxbox[security]
 
 # Run Bandit
 bandit -r src/
@@ -143,7 +143,7 @@ Security updates are released as soon as possible:
 - **Medium** - Next regular release
 - **Low** - Next major version
 
-Subscribe to [GitHub Security Advisories](https://github.com/zerodaysec/proxmox-utilities/security/advisories) for notifications.
+Subscribe to [GitHub Security Advisories](https://github.com/zerodaysec/proxbox/security/advisories) for notifications.
 
 ## Compliance
 
