@@ -1,0 +1,243 @@
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "proxmox-utilities"
+version = "0.1.0"
+description = "Secure, production-ready utilities for Proxmox VM automation"
+readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
+authors = [
+    {name = "ZeroDay Security", email = "jon@zer0day.net"}
+]
+maintainers = [
+    {name = "ZeroDay Security", email = "jon@zer0day.net"}
+]
+keywords = [
+    "proxmox",
+    "virtualization",
+    "automation",
+    "vm-management",
+    "cloud-init",
+    "infrastructure"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Systems Administration",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "requests>=2.31.0",
+    "tenacity>=8.2.0",
+    "typing-extensions>=4.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+    "types-requests>=2.31.0",
+    "pre-commit>=3.5.0",
+]
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.4.0",
+    "mkdocstrings[python]>=0.24.0",
+    "mkdocs-gen-files>=0.5.0",
+    "mkdocs-literate-nav>=0.6.0",
+]
+security = [
+    "bandit[toml]>=1.7.0",
+    "safety>=2.3.0",
+    "pip-audit>=2.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/zerodaysec/proxmox-utilities"
+Documentation = "https://zerodaysec.github.io/proxmox-utilities"
+Repository = "https://github.com/zerodaysec/proxmox-utilities"
+Issues = "https://github.com/zerodaysec/proxmox-utilities/issues"
+Changelog = "https://github.com/zerodaysec/proxmox-utilities/blob/main/CHANGELOG.md"
+
+[project.scripts]
+proxmox-create-template = "proxmox_utilities.cli:create_template"
+proxmox-create-vm = "proxmox_utilities.cli:create_vm"
+proxmox = "proxmox_utilities.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/proxmox_utilities"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/docs",
+    "/README.md",
+    "/CHANGELOG.md",
+    "/LICENSE",
+    "/pyproject.toml",
+]
+exclude = [
+    "/.github",
+    "/.git",
+    "/__pycache__",
+    "*.pyc",
+    ".env",
+    ".venv",
+]
+
+# Black configuration
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+# Ruff configuration
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "C",   # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "S",   # flake8-bandit (security)
+    "T20", # flake8-print
+    "PT",  # flake8-pytest-style
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+    "ARG", # flake8-unused-arguments
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "S603",  # subprocess call - we need this for qm commands
+    "S607",  # starting a process with a partial path
+]
+extend-exclude = [
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+]
+
+[tool.ruff.per-file-ignores]
+"tests/**/*.py" = [
+    "S101",  # assert allowed in tests
+    "ARG",   # unused arguments ok in tests
+    "PT011", # pytest.raises() without match parameter
+]
+
+# MyPy configuration
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+follow_imports = "normal"
+strict_optional = true
+strict_equality = true
+show_error_codes = true
+show_column_numbers = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+
+# Pytest configuration
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=src/proxmox_utilities",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+    "--cov-branch",
+    "-vv",
+]
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests requiring Proxmox connection",
+    "slow: Slow tests",
+]
+
+# Coverage configuration
+[tool.coverage.run]
+source = ["src"]
+branch = true
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/.venv/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
+precision = 2
+show_missing = true
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+# Bandit security scanner configuration
+[tool.bandit]
+targets = ["src"]
+exclude_dirs = ["tests", ".venv", "venv"]
+skips = ["B603", "B607"]  # subprocess calls needed for qm commands
+
+[tool.bandit.assert_used]
+skips = ["*/test_*.py"]
