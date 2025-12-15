@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -62,7 +62,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -95,7 +95,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -137,7 +137,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -156,7 +156,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -190,7 +190,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -234,7 +234,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -264,7 +264,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
@@ -288,7 +288,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.13.3
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
